@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('commentaires', function (Blueprint $table) {
+            $table->id();
+            $table->string('body');
+            $table->foreignId('idCommerce')
+                ->constrained('commerces')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+
+            $table->foreignId('idService')->nullable()
+                ->constrained('services')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+
+            $table->foreignId('IdUser')
+                ->constrained('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('commentaires');
+    }
+};
