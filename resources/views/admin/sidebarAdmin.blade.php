@@ -27,6 +27,12 @@
         <span class="text">Gestion des Services</span></a>
     </li>
 
+    <!-- Nav item -->
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('admin.commentaires') }}">
+        <span class="text">Commentaires</span></a>
+    </li>
+
   </ul>
 
 </div>

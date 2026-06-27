@@ -35,4 +35,22 @@ return [
         ],
     ],
 
+    // IA de verification de la description du local (ex: FastAPI / LLM).
+    // Laissez vide pour utiliser l'analyse heuristique locale.
+    'description_ai' => [
+        'url' => env('DESCRIPTION_AI_URL'),
+    ],
+
+    // IA chatbot de recherche de produits/services (FastAPI -> base de donnees).
+    'chatbot_ai' => [
+        'url' => env('CHATBOT_AI_URL'),
+        'key' => env('CHATBOT_AI_KEY'),
+    ],
+
+    // IA de scoring (1 a 5 etoiles) des commerces/services via les commentaires.
+    'scoring_ai' => [
+        'url' => env('SCORING_AI_URL'),
+        'key' => env('SCORING_AI_KEY'),
+    ],
+
 ];

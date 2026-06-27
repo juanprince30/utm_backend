@@ -13,6 +13,7 @@ class Commerce extends Model
         'categorie',
         'position',
         'ville',
+        'description',
         'horaire',
         'emailCommerce',
         'conctactResponsable',
@@ -28,7 +29,8 @@ class Commerce extends Model
         return [
             'horaire'         => 'array',
             'photos'          => 'array',
-            'etatPublication' => 'boolean',
+            'etatPublication' => 'string',
+            'scoringCommerce' => 'decimal:1',
         ];
     }
 

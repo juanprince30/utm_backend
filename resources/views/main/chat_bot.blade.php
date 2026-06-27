@@ -475,10 +475,11 @@
     //     { reply: "texte", results: [ { name, category, product,
     //       ville, price, rating, image, url } ] }
     // ────────────────────────────────────────────────
-    const CHATBOT_API_URL = "/api/chatbot";   // ex: https://votre-fastapi/chat
-    const USE_API = false;                     // true => appelle l'API réelle
+    const CHATBOT_API_URL = "/api/chatbot";   // proxy Laravel -> IA FastAPI
+    const USE_API = true;                      // true => appelle l'API réelle
 
     const ASSET = "{{ asset('') }}";
+    const COMMERCE_URL_BASE = "{{ rtrim(url('/commerces'), '/') }}";
 
     const body          = document.getElementById('chatBody');
     const form          = document.getElementById('chatForm');
@@ -546,7 +547,9 @@
         let cards = '';
         results.forEach(r => {
             const img = r.image ? (r.image.startsWith('http') ? r.image : ASSET + r.image) : '';
-            const href = r.url || '#';
+            const href = r.commerce_id
+                ? `${COMMERCE_URL_BASE}/${r.commerce_id}`
+                : (r.url || '#');
             cards += `
                 <a class="chat-card" href="${escapeHtml(href)}">
                     ${img ? `<img class="chat-card-img" src="${escapeHtml(img)}" alt="${escapeHtml(r.name)}">` : ''}

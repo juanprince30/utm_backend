@@ -157,7 +157,7 @@
                 @endif
             </div>
             <div class="p-3 d-flex flex-column gap-1">
-              <a href="#!" class="dropdown-item d-flex align-items-center gap-2">
+              <a href="{{ route('main') }}" class="dropdown-item d-flex align-items-center gap-2">
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                     class="icon icon-tabler icons-tabler-outline icon-tabler-home-2">

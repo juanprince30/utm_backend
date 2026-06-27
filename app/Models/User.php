@@ -41,6 +41,7 @@ class User extends Authenticatable
             'isActif'           => 'boolean',
             'canCormmerce'      => 'boolean',
             'isCertified'       => 'boolean',
+            'scoringArtisant'   => 'decimal:1',
         ];
     }
 

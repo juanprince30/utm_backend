@@ -38,6 +38,10 @@ class AuthController extends Controller
         return view('auth.resetpassword');
     }
 
+     public function show_artisan_dash(){
+        return view('artisan.dashboard');
+    }
+
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
             'name'      => 'required|string|max:255',
