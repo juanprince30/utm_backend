@@ -48,6 +48,8 @@
     <!-- build:css {{ asset('admin/dasher-1.0.0/src/assets/css/theme.min.css') }} -->
     <link rel="stylesheet" href="{{ asset('admin/dasher-1.0.0/src/assets/css/theme.css') }}" />
     <!-- endbuild -->
+    @stack('head')
+    @stack('styles')
 
 </head>
 
@@ -82,6 +84,7 @@
   <script src="{{ asset('admin/dasher-1.0.0/src/assets/js/vendors/choice.js') }}"></script>
   <script src="{{ asset('admin/dasher-1.0.0/src/node_modules/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('admin/dasher-1.0.0/src/assets/js/vendors/swiper.js') }}"></script>
+  @stack('scripts')
 </body>
 
 </html>

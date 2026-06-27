@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Commentaire;
 use App\Models\Commerce;
+
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class AdminController extends Controller
             'users_inactifs'     => User::where('isActif', false)->count(),
             'users_certifies'    => User::where('isCertified', true)->count(),
             'total_commerces'    => Commerce::count(),
-            'commerces_publies'  => Commerce::where('etatPublication', true)->count(),
+            'commerces_publies'  => Commerce::where('etatPublication', 'publie')->count(),
             'total_services'     => Service::count(),
             'services_dispos'    => Service::where('isAvaillable', true)->count(),
             'total_commentaires' => Commentaire::count(),
@@ -166,7 +167,7 @@ class AdminController extends Controller
         }
 
         if ($request->filled('etat')) {
-            $query->where('etatPublication', $request->etat === '1');
+            $query->where('etatPublication', $request->etat);
         }
 
         $commerces = $query->latest()->paginate(15)->withQueryString();
@@ -182,8 +183,9 @@ class AdminController extends Controller
 
     public function commerces_toggle_publication(Commerce $commerce)
     {
-        $commerce->update(['etatPublication' => !$commerce->etatPublication]);
-        $msg = $commerce->etatPublication ? 'Commerce publie.' : 'Commerce depublie.';
+        $newEtat = $commerce->etatPublication === 'publie' ? 'draft' : 'publie';
+        $commerce->update(['etatPublication' => $newEtat]);
+        $msg = $newEtat === 'publie' ? 'Commerce publie.' : 'Commerce depublie (draft).';
         return back()->with('success', $msg);
     }
 
@@ -235,5 +237,35 @@ class AdminController extends Controller
     {
         $service->delete();
         return redirect()->route('admin.services')->with('success', 'Service supprime.');
+    }
+
+    // ═══════════════════════════════════════════════
+    // GESTION COMMENTAIRES
+    // ═══════════════════════════════════════════════
+
+    public function commentaires_index(Request $request)
+    {
+        $query = Commentaire::with(['user', 'commerce', 'service'])
+            ->latest();
+
+        if ($request->filled('search')) {
+            $s = $request->search;
+            $query->where('body', 'ilike', "%$s%");
+        }
+
+        if ($request->filled('commerce')) {
+            $query->where('idCommerce', $request->commerce);
+        }
+
+        $commentaires = $query->paginate(20)->withQueryString();
+        $commerces    = Commerce::orderBy('nomCormmercial')->get(['id', 'nomCormmercial']);
+
+        return view('admin.commentaires.index', compact('commentaires', 'commerces'));
+    }
+
+    public function commentaires_destroy(Commentaire $commentaire)
+    {
+        $commentaire->delete();
+        return back()->with('success', 'Commentaire supprime.');
     }
 }

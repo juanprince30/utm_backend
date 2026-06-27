@@ -27,8 +27,9 @@
                  placeholder="Nom, ville, categorie..." value="{{ request('search') }}">
           <select name="etat" class="form-select form-select-sm" style="max-width:180px;">
             <option value="">Tous les etats</option>
-            <option value="1" {{ request('etat') === '1' ? 'selected' : '' }}>Publies</option>
-            <option value="0" {{ request('etat') === '0' ? 'selected' : '' }}>En attente</option>
+            <option value="publie" {{ request('etat') === 'publie' ? 'selected' : '' }}>Publies</option>
+            <option value="draft"  {{ request('etat') === 'draft'  ? 'selected' : '' }}>Draft</option>
+            <option value="retire" {{ request('etat') === 'retire' ? 'selected' : '' }}>Retires</option>
           </select>
           <button type="submit" class="btn btn-sm btn-primary rounded-pill px-4">Filtrer</button>
           <a href="{{ route('admin.commerces') }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Reset</a>
@@ -62,8 +63,8 @@
                 <td>
                   <form method="POST" action="{{ route('admin.commerces.publication', $c) }}">
                     @csrf @method('PATCH')
-                    <button type="submit" class="btn btn-sm rounded-pill px-3 {{ $c->etatPublication ? 'btn-success' : 'btn-outline-secondary' }}">
-                      {{ $c->etatPublication ? 'Publie' : 'En attente' }}
+                    <button type="submit" class="btn btn-sm rounded-pill px-3 {{ $c->etatPublication === 'publie' ? 'btn-success' : ($c->etatPublication === 'retire' ? 'btn-danger' : 'btn-outline-secondary') }}">
+                      {{ $c->etatPublication === 'publie' ? 'Publie' : ($c->etatPublication === 'retire' ? 'Retire' : 'Draft') }}
                     </button>
                   </form>
                 </td>

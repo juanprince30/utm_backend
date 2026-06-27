@@ -220,10 +220,12 @@
                                         <td class="text-secondary small">{{ $c->ville }}</td>
                                         <td class="text-secondary small">{{ $c->user?->prenom }} {{ $c->user?->name }}</td>
                                         <td>
-                                            @if($c->etatPublication)
+                                            @if($c->etatPublication === 'publie')
                                                 <span class="badge bg-success-subtle text-success rounded-pill">Publie</span>
+                                            @elseif($c->etatPublication === 'retire')
+                                                <span class="badge bg-danger-subtle text-danger rounded-pill">Retire</span>
                                             @else
-                                                <span class="badge bg-warning-subtle text-warning rounded-pill">En attente</span>
+                                                <span class="badge bg-warning-subtle text-warning rounded-pill">Draft</span>
                                             @endif
                                         </td>
                                     </tr>

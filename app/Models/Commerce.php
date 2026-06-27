@@ -28,7 +28,7 @@ class Commerce extends Model
         return [
             'horaire'         => 'array',
             'photos'          => 'array',
-            'etatPublication' => 'boolean',
+            'etatPublication' => 'string',
         ];
     }
 

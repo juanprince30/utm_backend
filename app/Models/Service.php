@@ -16,13 +16,15 @@ class Service extends Model
         'photo',
         'scoringService',
         'idCommerce',
+        'etatPublication',
     ];
 
     protected function casts(): array
     {
         return [
-            'isAvaillable' => 'boolean',
-            'prixService'  => 'decimal:2',
+            'isAvaillable'    => 'boolean',
+            'prixService'     => 'decimal:2',
+            'etatPublication' => 'string',
         ];
     }
 

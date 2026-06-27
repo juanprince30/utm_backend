@@ -26,13 +26,13 @@
 
     <!-- Navbar nav -->
     <ul class="list-unstyled d-flex align-items-center mb-0 gap-8">
-      <li class="nav-item"><a class="nav-link" href="">Commerces </a></li>
-      <li class="nav-item"><a class="nav-link" href="">Services </a></li>
+      <li class="nav-item"><a class="nav-link {{ request()->routeIs('commerces.*') ? 'active' : '' }}" href="{{ route('commerces.index', array_filter(['lat'=>request('lat'),'lng'=>request('lng')])) }}">Commerces</a></li>
+      <li class="nav-item"><a class="nav-link {{ request()->routeIs('services.*') ? 'active' : '' }}" href="{{ route('services.index', array_filter(['lat'=>request('lat'),'lng'=>request('lng')])) }}">Services</a></li>
       <li class="nav-item"><a class="nav-link" href="">Chatbots </a></li>
 
-        @auth
-            <li class="nav-item"><a class="nav-link" href="">Espace Artisan </a></li>
-        @endauth
+        @if(Auth::check() && Auth::user()->canCormmerce)
+            <li class="nav-item"><a class="nav-link" href="{{ route('artisan.dashboard') }}">Espace Artisan </a></li>
+        @endif
 
       <!-- Pages link -->
       <li>
@@ -101,7 +101,7 @@
                       class="avatar avatar-sm rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
@@ -118,7 +118,7 @@
                       class="avatar avatar-md rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-md rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
@@ -130,7 +130,7 @@
                 @endif
             </div>
             <div class="p-3 d-flex flex-column gap-1">
-              <a href="#!" class="dropdown-item d-flex align-items-center gap-2">
+              <a href="{{ route('main') }}" class="dropdown-item d-flex align-items-center gap-2">
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                     class="icon icon-tabler icons-tabler-outline icon-tabler-home-2">
@@ -286,7 +286,7 @@
                       class="avatar avatar-sm rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
