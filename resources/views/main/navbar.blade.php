@@ -28,7 +28,7 @@
     <ul class="list-unstyled d-flex align-items-center mb-0 gap-8">
       <li class="nav-item"><a class="nav-link" href="">Commerces </a></li>
       <li class="nav-item"><a class="nav-link" href="">Services </a></li>
-      <li class="nav-item"><a class="nav-link" href="">Chatbots </a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ route('chatbot') }}">Chatbots </a></li>
 
         @auth
             <li class="nav-item"><a class="nav-link" href="">Espace Artisan </a></li>
@@ -101,7 +101,7 @@
                       class="avatar avatar-sm rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
@@ -118,7 +118,7 @@
                       class="avatar avatar-md rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-md rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
@@ -286,7 +286,7 @@
                       class="avatar avatar-sm rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif

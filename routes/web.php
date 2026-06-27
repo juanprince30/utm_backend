@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view("welcome");
 })->name('main');
 
+Route::get('/chatbot', function () {
+    return view('main.chat_bot');
+})->name('chatbot');
+
 
 // Affichage des formulaires
 Route::get('/login',          [AuthController::class, 'show_login'])->name('login.form');

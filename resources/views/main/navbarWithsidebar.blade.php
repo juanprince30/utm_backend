@@ -128,7 +128,7 @@
                       class="avatar avatar-sm rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
@@ -144,7 +144,7 @@
                       class="avatar avatar-md rounded-circle object-fit-cover">
                 @else
                   <div class="avatar avatar-md rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
-                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                   </div>
                 @endif
                 @endif
