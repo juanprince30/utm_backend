@@ -76,6 +76,230 @@
 
 </div>
 
+    @if(Auth::check())
+        {{-- ═══════════════════════════════════════════════
+         SECTION IMAGES — Galerie artisans
+    ═══════════════════════════════════════════════ --}}
+    <div class="row mt-5 mb-2 px-10">
+        <div class="col-12">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <div>
+                    <h2 class="fw-bold mb-1" style="font-size:1.4rem;">
+                        Découvrez nos métiers
+                    </h2>
+                    <p class="text-secondary mb-0 small">
+                        Des professionnels qualifiés à votre service dans toute la région
+                    </p>
+                </div>
+                <a href="#!" class="btn btn-outline-primary btn-sm rounded-pill px-4">
+                    Voir tous les artisans
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-6 px-10">
+
+        {{-- Carte 1 — Mécanique auto --}}
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden rounded-4 artisan-card">
+                <div class="position-relative overflow-hidden" style="height:260px;">
+                    <img src="{{ asset('freepik/bipoc-specialist-car-service-using-professional-mechanical-tool-repair-broken-ignition-system-licensed-specialist-garage-fixing-client-automobile-ensuring-optimal-automotive-performance.jpg') }}"
+                         alt="Mécanicien automobile"
+                         class="w-100 h-100 artisan-img"
+                         style="object-fit:cover;transition:transform .5s ease;">
+                    <div class="position-absolute inset-0 w-100 h-100"
+                         style="background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 60%);top:0;left:0;">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 p-4">
+                        <span class="badge rounded-pill px-3 py-2"
+                              style="background:rgba(99,102,241,0.9);font-size:.75rem;">
+                            🔧 Mécanique
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-2">Service Automobile Professionnel</h5>
+                    <p class="text-secondary mb-3" style="font-size:.88rem;line-height:1.6;">
+                        Nos mécaniciens certifiés diagnostiquent et réparent tous types de véhicules.
+                        Expertise reconnue, équipements de pointe et garantie sur chaque intervention.
+                    </p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#e5e7eb" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <span class="text-secondary ms-1" style="font-size:.78rem;">4.8 (124 avis)</span>
+                        </div>
+                        <a href="#!" class="btn btn-primary btn-sm rounded-pill px-3">Contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Carte 2 — Menuiserie --}}
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden rounded-4 artisan-card">
+                <div class="position-relative overflow-hidden" style="height:260px;">
+                    <img src="{{ asset('freepik/carpenter-cutting-mdf-board-inside-workshop.jpg') }}"
+                         alt="Menuisier en atelier"
+                         class="w-100 h-100 artisan-img"
+                         style="object-fit:cover;transition:transform .5s ease;">
+                    <div class="position-absolute inset-0 w-100 h-100"
+                         style="background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 60%);top:0;left:0;">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 p-4">
+                        <span class="badge rounded-pill px-3 py-2"
+                              style="background:rgba(217,119,6,0.9);font-size:.75rem;">
+                            🪵 Menuiserie
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-2">Menuiserie & Travaux sur Bois</h5>
+                    <p class="text-secondary mb-3" style="font-size:.88rem;line-height:1.6;">
+                        Fabrication sur mesure de meubles, parquets, portes et aménagements intérieurs.
+                        Chaque pièce est travaillée avec passion et souci du détail.
+                    </p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <span class="text-secondary ms-1" style="font-size:.78rem;">5.0 (87 avis)</span>
+                        </div>
+                        <a href="#!" class="btn btn-primary btn-sm rounded-pill px-3">Contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Carte 3 — Travaux de précision --}}
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden rounded-4 artisan-card">
+                <div class="position-relative overflow-hidden" style="height:260px;">
+                    <img src="{{ asset('freepik/man-wears-safety-goggles-while-using-chisel-hammer-avoid-injury.jpg') }}"
+                         alt="Artisan avec outils de précision"
+                         class="w-100 h-100 artisan-img"
+                         style="object-fit:cover;transition:transform .5s ease;">
+                    <div class="position-absolute inset-0 w-100 h-100"
+                         style="background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 60%);top:0;left:0;">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 p-4">
+                        <span class="badge rounded-pill px-3 py-2"
+                              style="background:rgba(5,150,105,0.9);font-size:.75rem;">
+                            ⚒️ Travaux manuels
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-2">Travaux de Précision & Sécurité</h5>
+                    <p class="text-secondary mb-3" style="font-size:.88rem;line-height:1.6;">
+                        Taille de pierre, sculpture et travaux de précision réalisés dans le respect
+                        des normes de sécurité. Un artisanat exigeant pour des résultats impeccables.
+                    </p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#e5e7eb" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <span class="text-secondary ms-1" style="font-size:.78rem;">4.7 (56 avis)</span>
+                        </div>
+                        <a href="#!" class="btn btn-primary btn-sm rounded-pill px-3">Contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Carte 4 — Fabrication bois --}}
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden rounded-4 artisan-card">
+                <div class="position-relative overflow-hidden" style="height:260px;">
+                    <img src="{{ asset('freepik/medium-shot-man-working-with-hand-saw.jpg') }}"
+                         alt="Artisan scie à main"
+                         class="w-100 h-100 artisan-img"
+                         style="object-fit:cover;transition:transform .5s ease;">
+                    <div class="position-absolute inset-0 w-100 h-100"
+                         style="background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 60%);top:0;left:0;">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 p-4">
+                        <span class="badge rounded-pill px-3 py-2"
+                              style="background:rgba(124,58,237,0.9);font-size:.75rem;">
+                            🪚 Découpe & Fabrication
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-2">Découpe & Fabrication sur Mesure</h5>
+                    <p class="text-secondary mb-3" style="font-size:.88rem;line-height:1.6;">
+                        Réalisation de structures bois, charpentes et mobilier personnalisé.
+                        Du plan à la livraison, votre artisan vous accompagne à chaque étape du projet.
+                    </p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <span class="text-secondary ms-1" style="font-size:.78rem;">4.9 (203 avis)</span>
+                        </div>
+                        <a href="#!" class="btn btn-primary btn-sm rounded-pill px-3">Contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @endif
+
 {{-- ═══════════════════════════════════════════════
      STYLES & SCRIPTS
 ═══════════════════════════════════════════════ --}}

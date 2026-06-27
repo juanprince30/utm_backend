@@ -92,16 +92,42 @@
       <!-- Dropdown -->
       <li class="ms-3 dropdown">
         <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="{{ asset('admin/dasher-1.0.0/src/assets/images/avatar/avatar-1.jpg') }}" alt="" class="avatar avatar-sm rounded-circle" />
+          
+            @if(Auth::check())
+
+                @if(Auth::user()->photo)
+                  <img src="{{ asset('storage/' . Auth::user()->photo) }}"
+                      alt="Photo de profil"
+                      class="avatar avatar-sm rounded-circle object-fit-cover">
+                @else
+                  <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                  </div>
+                @endif
+                @endif
+
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-md p-0">
           <div>
             <div class="d-flex gap-3 align-items-center border-dashed border-bottom px-4 py-4">
-              <img src="{{ asset('admin/dasher-1.0.0/src/assets/images/avatar/avatar-1.jpg') }}" alt="" class="avatar avatar-md rounded-circle" />
-              <div>
-                <h4 class="mb-0 fs-5">Jitu Chauhan</h4>
-                <p class="mb-0 text-secondar small">@imjituchauhan</p>
-              </div>
+              @if(Auth::check())
+
+                @if(Auth::user()->photo)
+                  <img src="{{ asset('storage/' . Auth::user()->photo) }}"
+                      alt="Photo de profil"
+                      class="avatar avatar-md rounded-circle object-fit-cover">
+                @else
+                  <div class="avatar avatar-md rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                  </div>
+                @endif
+                @endif
+              @if(Auth::check())
+                    <div>
+                      <h4 class="mb-0 fs-5">{{Auth::user()->name }} {{ Auth::user()->prenom }}</h4>
+                      <p class="mb-0 text-secondar small">{{ Auth::user()->email }}</p>
+                    </div>
+                @endif
             </div>
             <div class="p-3 d-flex flex-column gap-1">
               <a href="#!" class="dropdown-item d-flex align-items-center gap-2">
@@ -116,7 +142,7 @@
                 </span>
                 <span>Home</span>
               </a>
-              
+
               <a href="{{ route('profile') }}" class="dropdown-item d-flex align-items-center gap-2">
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -251,7 +277,20 @@
           <a href="#" class="list-group-item list-group-item-action p-5 border-dashed border-bottom">
             <div class="d-flex justify-content-between">
               <div class="d-flex gap-4 align-items-center">
-                <img src="{{ asset('admin/dasher-1.0.0/src/assets/images/avatar/avatar-1.jpg') }}" alt="" class="avatar avatar-md rounded-circle" />
+
+                @if(Auth::check())
+
+                @if(Auth::user()->photo)
+                  <img src="{{ asset('storage/' . Auth::user()->photo) }}"
+                      alt="Photo de profil"
+                      class="avatar avatar-sm rounded-circle object-fit-cover">
+                @else
+                  <div class="avatar avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center mx-auto fw-bold">
+                    {{ strtoupper(substr(Auth::user()->prenom, 0, 1)) }}{{ strtoupper(substr($user->name, 0, 1)) }}
+                  </div>
+                @endif
+                @endif
+
                 <div class="d-flex flex-column gap-1">
                   <div>Alice uploaded a new profile picture.</div>
                   <small class="text-secondary"> 1 hour ago</small>
